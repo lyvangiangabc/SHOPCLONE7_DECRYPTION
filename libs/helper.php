@@ -230,7 +230,7 @@ function url()
     isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] != "off" ? "https" : "http";
     $_SERVER["SERVER_NAME"];
     $_SERVER["REQUEST_URI"];
-    return sprintf();
+    return $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
 }
 function is_valid_domain_name($domain_name)
 {
@@ -528,7 +528,7 @@ function base_url($url = "")
     global $domain_block;
     $a = (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] === "on" ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"];
     if($a == "http://localhost") {
-        $a = "http://localhost/CMSNT.CO/SHOPCLONE7";
+        $a = "http://localhost/CMSNT.CO/SHOPCLONE7_ENCRYPTION";
     }
     return $a . "/" . $url;
 }
@@ -536,7 +536,7 @@ function base_url_admin($url = "")
 {
     $a = (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] === "on" ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"];
     if($a == "http://localhost") {
-        $a = "http://localhost/CMSNT.CO/SHOPCLONE7";
+        $a = "http://localhost/CMSNT.CO/SHOPCLONE7_ENCRYPTION";
     }
     return $a . "/?module=admin&action=" . $url;
 }

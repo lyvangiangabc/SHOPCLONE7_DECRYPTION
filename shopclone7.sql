@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: localhost:3306
--- Thời gian đã tạo: Th3 22, 2025 lúc 09:43 AM
--- Phiên bản máy phục vụ: 10.11.9-MariaDB
--- Phiên bản PHP: 8.3.9
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th3 26, 2025 lúc 07:30 AM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `bdichvusiovn_shop`
+-- Cơ sở dữ liệu: `shopclone7`
 --
 
 -- --------------------------------------------------------
@@ -56,7 +56,7 @@ CREATE TABLE `aff_log` (
   `sotienthaydoi` float NOT NULL DEFAULT 0,
   `sotienhientai` float NOT NULL DEFAULT 0,
   `create_gettime` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -76,7 +76,7 @@ CREATE TABLE `aff_withdraw` (
   `create_gettime` datetime NOT NULL,
   `update_gettime` datetime NOT NULL,
   `reason` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -110,7 +110,7 @@ CREATE TABLE `banks` (
   `password` text DEFAULT NULL,
   `token` text DEFAULT NULL,
   `status` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -125,7 +125,7 @@ CREATE TABLE `block_ip` (
   `banned` int(11) NOT NULL DEFAULT 0,
   `reason` text DEFAULT NULL,
   `create_gettime` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -142,7 +142,7 @@ CREATE TABLE `blogs` (
   `image` varchar(255) DEFAULT NULL,
   `view` int(11) NOT NULL DEFAULT 0,
   `create_date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -163,7 +163,7 @@ CREATE TABLE `cards` (
   `create_date` datetime NOT NULL,
   `update_date` datetime NOT NULL,
   `reason` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -186,7 +186,7 @@ CREATE TABLE `categories` (
   `content` longtext DEFAULT NULL,
   `status` int(11) NOT NULL DEFAULT 1,
   `create_date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -205,7 +205,7 @@ CREATE TABLE `coupons` (
   `update_gettime` datetime NOT NULL,
   `min` int(11) NOT NULL DEFAULT 1000,
   `max` int(11) NOT NULL DEFAULT 10000000
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -219,7 +219,7 @@ CREATE TABLE `coupon_used` (
   `user_id` int(11) NOT NULL DEFAULT 0,
   `trans_id` varchar(255) DEFAULT NULL,
   `create_gettime` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -238,7 +238,7 @@ CREATE TABLE `currencies` (
   `display` int(11) NOT NULL DEFAULT 1,
   `default_currency` int(11) NOT NULL DEFAULT 0,
   `decimal_currency` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -249,7 +249,7 @@ CREATE TABLE `currencies` (
 CREATE TABLE `deposit_log` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `method` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_vietnamese_ci DEFAULT NULL,
+  `method` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
   `amount` float NOT NULL DEFAULT 0,
   `received` float NOT NULL DEFAULT 0,
   `create_time` int(11) NOT NULL,
@@ -271,7 +271,7 @@ CREATE TABLE `dongtien` (
   `thoigian` datetime NOT NULL,
   `noidung` text DEFAULT NULL,
   `transid` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -289,7 +289,7 @@ CREATE TABLE `email_campaigns` (
   `create_gettime` datetime NOT NULL,
   `update_gettime` datetime NOT NULL,
   `status` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -305,7 +305,7 @@ CREATE TABLE `email_sending` (
   `create_gettime` datetime NOT NULL,
   `update_gettime` datetime NOT NULL,
   `response` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -319,7 +319,7 @@ CREATE TABLE `failed_attempts` (
   `attempts` int(11) NOT NULL DEFAULT 0,
   `create_gettime` datetime NOT NULL,
   `type` varchar(55) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `failed_attempts`
@@ -340,7 +340,7 @@ CREATE TABLE `favorites` (
   `user_id` int(11) NOT NULL DEFAULT 0,
   `product_id` int(11) NOT NULL DEFAULT 0,
   `create_gettime` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -354,7 +354,7 @@ CREATE TABLE `languages` (
   `icon` text DEFAULT NULL,
   `lang_default` int(11) NOT NULL DEFAULT 0,
   `status` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -369,7 +369,7 @@ CREATE TABLE `logs` (
   `device` varchar(255) DEFAULT NULL,
   `createdate` datetime NOT NULL,
   `action` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `logs`
@@ -434,7 +434,9 @@ INSERT INTO `logs` (`id`, `user_id`, `ip`, `device`, `createdate`, `action`) VAL
 (56, 1, '14.231.178.238', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', '2025-03-22 09:39:59', 'Xoá chuyên mục (DIscord Licho &amp; Cái Khác ID 4)'),
 (57, 3, '14.231.178.238', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', '2025-03-22 09:41:09', 'Create an account'),
 (58, 1, '14.231.178.238', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', '2025-03-22 09:42:18', 'Thay đổi thông tin trong trang cài đặt'),
-(59, 1, '14.231.178.238', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', '2025-03-22 09:42:37', 'Thay đổi thông tin trong trang cài đặt');
+(59, 1, '14.231.178.238', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', '2025-03-22 09:42:37', 'Thay đổi thông tin trong trang cài đặt'),
+(60, 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0', '2025-03-22 23:04:57', '[Warning] Thực hiện đăng nhập vào website'),
+(61, 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0', '2025-03-26 13:23:25', 'Thay đổi thông tin trong trang cài đặt');
 
 -- --------------------------------------------------------
 
@@ -450,7 +452,7 @@ CREATE TABLE `log_bank_auto` (
   `type` text DEFAULT NULL,
   `amount` float NOT NULL DEFAULT 0,
   `create_gettime` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -466,7 +468,7 @@ CREATE TABLE `log_ref` (
   `sotienthaydoi` float NOT NULL DEFAULT 0,
   `sotienhientai` float NOT NULL DEFAULT 0,
   `create_gettime` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -487,7 +489,7 @@ CREATE TABLE `menu` (
   `content` longtext DEFAULT NULL,
   `create_gettime` datetime NOT NULL,
   `update_gettime` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -507,7 +509,7 @@ CREATE TABLE `momo` (
   `time` datetime DEFAULT NULL,
   `user_id` int(11) DEFAULT 0,
   `status` varchar(32) DEFAULT 'xuly'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -518,7 +520,7 @@ CREATE TABLE `momo` (
 CREATE TABLE `order_log` (
   `id` int(11) NOT NULL,
   `buyer` int(11) NOT NULL,
-  `product_name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_vietnamese_ci DEFAULT NULL,
+  `product_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
   `pay` float NOT NULL DEFAULT 0,
   `amount` int(11) NOT NULL DEFAULT 0,
   `create_time` int(11) NOT NULL,
@@ -542,7 +544,7 @@ CREATE TABLE `payment_bank` (
   `create_time` int(11) DEFAULT 0,
   `user_id` int(11) DEFAULT 0,
   `notication` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -562,7 +564,7 @@ CREATE TABLE `payment_crypto` (
   `status` varchar(55) NOT NULL DEFAULT 'waiting',
   `msg` text DEFAULT NULL,
   `url_payment` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -580,7 +582,7 @@ CREATE TABLE `payment_flutterwave` (
   `create_gettime` datetime NOT NULL,
   `update_gettime` datetime NOT NULL,
   `status` varchar(55) NOT NULL DEFAULT 'pending'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -598,7 +600,7 @@ CREATE TABLE `payment_manual` (
   `display` int(11) NOT NULL DEFAULT 0,
   `create_gettime` datetime NOT NULL,
   `update_gettime` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -617,7 +619,7 @@ CREATE TABLE `payment_momo` (
   `create_time` int(11) DEFAULT 0,
   `user_id` int(11) DEFAULT 0,
   `notication` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -633,7 +635,7 @@ CREATE TABLE `payment_paypal` (
   `price` int(11) NOT NULL DEFAULT 0,
   `create_date` datetime NOT NULL,
   `create_time` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -652,7 +654,7 @@ CREATE TABLE `payment_pm` (
   `update_date` datetime NOT NULL,
   `update_time` int(11) NOT NULL DEFAULT 0,
   `status` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -667,7 +669,7 @@ CREATE TABLE `payment_squadco` (
   `amount` float NOT NULL DEFAULT 0,
   `create_gettime` datetime NOT NULL,
   `price` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -686,7 +688,7 @@ CREATE TABLE `payment_toyyibpay` (
   `create_gettime` datetime NOT NULL,
   `update_gettime` datetime NOT NULL,
   `reason` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -706,7 +708,7 @@ CREATE TABLE `posts` (
   `status` int(11) NOT NULL DEFAULT 0,
   `view` int(11) NOT NULL DEFAULT 0,
   `create_gettime` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -722,7 +724,7 @@ CREATE TABLE `post_category` (
   `icon` text DEFAULT NULL,
   `status` int(11) NOT NULL DEFAULT 1,
   `create_gettime` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -760,7 +762,7 @@ CREATE TABLE `products` (
   `api_time_update` int(11) NOT NULL DEFAULT 0,
   `text_txt` text DEFAULT NULL,
   `order_by` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -776,7 +778,7 @@ CREATE TABLE `product_die` (
   `account` text DEFAULT NULL,
   `create_gettime` datetime NOT NULL,
   `type` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -790,7 +792,7 @@ CREATE TABLE `product_discount` (
   `discount` float NOT NULL DEFAULT 0,
   `min` int(11) NOT NULL DEFAULT 0,
   `create_gettime` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -819,7 +821,7 @@ CREATE TABLE `product_order` (
   `status_view_order` int(11) NOT NULL DEFAULT 0,
   `api_transid` text DEFAULT NULL,
   `note` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -839,7 +841,7 @@ CREATE TABLE `product_sold` (
   `create_gettime` datetime NOT NULL,
   `time_check_live` int(11) NOT NULL DEFAULT 0,
   `type` varchar(55) DEFAULT 'WEB'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -856,7 +858,7 @@ CREATE TABLE `product_stock` (
   `create_gettime` datetime NOT NULL,
   `type` varchar(55) DEFAULT 'WEB',
   `time_check_live` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `product_stock`
@@ -945,7 +947,7 @@ CREATE TABLE `promotions` (
   `min` float NOT NULL DEFAULT 0,
   `discount` float NOT NULL DEFAULT 0,
   `create_gettime` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -957,7 +959,7 @@ CREATE TABLE `settings` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `value` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `settings`
@@ -966,21 +968,21 @@ CREATE TABLE `settings` (
 INSERT INTO `settings` (`id`, `name`, `value`) VALUES
 (1, 'status_demo', '0'),
 (2, 'type_password', 'bcrypt'),
-(3, 'title', ''),
-(4, 'description', ''),
-(5, 'keywords', ''),
-(6, 'author', 'a'),
+(3, 'title', 'Mèo Mặt Căng'),
+(4, 'description', 'Mèo Mặt Căng'),
+(5, 'keywords', 'Mèo Mặt Căng'),
+(6, 'author', 'Mèo Mặt Căng'),
 (7, 'timezone', 'Asia/Ho_Chi_Minh'),
-(8, 'email', ''),
+(8, 'email', 'contact@maihuybao.dev'),
 (9, 'status', '1'),
 (10, 'status_update', '0'),
 (12, 'session_login', '10000000'),
 (13, 'javascript_header', '<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\r\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\r\n<link href=\"https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap\" rel=\"stylesheet\">'),
 (14, 'javascript_footer', '<div class=\"gtranslate_wrapper\"></div>\r\n<script>\r\nwindow.gtranslateSettings = {\r\n  \"default_language\": \"vi\",\r\n  \"detect_browser_language\": true,\r\n  \"languages\": [\"vi\", \"en\", \"ru\", \"th\", \"km\", \"lo\", \"id\", \"fr\", \"de\", \"ja\", \"pt\", \"ko\"],\r\n  \"wrapper_selector\": \".gtranslate_wrapper\"\r\n}\r\n</script>\r\n<script src=\"https://cdn.gtranslate.net/widgets/latest/float.js\" defer></script>'),
-(16, 'logo_light', 'assets/storage/images/logo_light_J9V.png'),
-(17, 'logo_dark', 'assets/storage/images/logo_dark_9XC.png'),
-(18, 'favicon', 'assets/storage/images/favicon_ZV9.png'),
-(19, 'image', 'assets/storage/images/image_1HV.png'),
+(16, 'logo_light', 'assets/storage/images/logo_light_E4K.png'),
+(17, 'logo_dark', 'assets/storage/images/logo_dark_VBL.png'),
+(18, 'favicon', 'assets/storage/images/favicon_40D.png'),
+(19, 'image', 'assets/storage/images/image_GVQ.png'),
 (20, 'bg_login', 'assets/storage/images/chimto.png'),
 (21, 'bg_register', 'assets/storage/images/chimto.png'),
 (26, 'telegram_token', ''),
@@ -988,10 +990,10 @@ INSERT INTO `settings` (`id`, `name`, `value`) VALUES
 (30, 'prefix_autobank', 'NAPTIEN'),
 (35, 'bank_status', '1'),
 (36, 'bank_notice', '<p><span style=\"color:#3498db\"><strong>Nạp Tối Thiểu 10.000đ. Vui l&ograve;ng ghi đ&uacute;ng nội dung để tự động cộng tiền</strong></span></p>\r\n\r\n<ul>\r\n	<li>\r\n	<p>Sau 5 ph&uacute;t kh&ocirc;ng thấy cộng tiền vui l&ograve;ng inbox admin ở menu Li&ecirc;n Hệ, xin cảm ơn.</p>\r\n\r\n	<p><em><strong>BƯỚC 1: MỞ QU&Eacute;T M&Atilde; QR CỦA NG&Acirc;N H&Agrave;NG HOẶC MỞ CAMERA ĐIỆN THOẠI ĐỂ QU&Eacute;T</strong></em></p>\r\n\r\n	<p><em><strong>BƯỚC 2:&nbsp;NHẬP SỐ TIỀN CẦN NẠP</strong></em></p>\r\n\r\n	<p><em><strong>BƯỚC 3: ẤN HO&Agrave;N TH&Agrave;NH</strong></em></p>\r\n\r\n	<p><strong><em>Admin Sẽ Duyệt V&agrave;o Tối</em></strong></p>\r\n	</li>\r\n</ul>\r\n'),
-(43, 'notice_home', '<p><img alt=\"yes\" src=\"http://localhost/CMSNT.CO/SHOPCLONE7/public/ckeditor/plugins/smiley/images/thumbs_up.png\" title=\"yes\" />&nbsp;Thay đổi th&ocirc;ng b&aacute;o nổi tại -&gt;&nbsp;<strong>Trang Quản Trị</strong>&nbsp;-&gt;&nbsp;<strong>C&agrave;i Đặt</strong>&nbsp;-&gt;&nbsp;<strong>Th&ocirc;ng b&aacute;o ngo&agrave;i trang chủ</strong></p>\r\n\r\n<p><strong>T&agrave;i Khoản admin:</strong></p>\r\n\r\n<p><strong>Tk:admin&nbsp;</strong></p>\r\n\r\n<p><strong>Mk:admin</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p style=\"text-align:center\">&nbsp;</p>\r\n'),
+(43, 'notice_home', '<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p style=\"text-align:center\">&nbsp;</p>\r\n'),
 (44, 'font_family', 'font-family: \'Saira Semi Condensed\', sans-serif;'),
 (59, 'popup_status', '1'),
-(60, 'popup_noti', '<p><img alt=\"yes\" src=\"http://localhost/CMSNT.CO/SHOPCLONE7/public/ckeditor/plugins/smiley/images/thumbs_up.png\" title=\"yes\" />&nbsp;Thay đổi th&ocirc;ng b&aacute;o nổi tại -&gt;&nbsp;<strong>Trang Quản Trị</strong>&nbsp;-&gt;&nbsp;<strong>C&agrave;i Đặt</strong>&nbsp;-&gt;&nbsp;<strong>Th&ocirc;ng b&aacute;o nổi ngo&agrave;i trang chủ</strong></p>\r\n\r\n<p><img alt=\"yes\" src=\"http://localhost/CMSNT.CO/SHOPCLONE7/public/ckeditor/plugins/smiley/images/thumbs_up.png\" title=\"yes\" />&nbsp;Ẩn th&ocirc;ng b&aacute;o nổi tại -&gt;&nbsp;<strong>Trang Quản Trị</strong>&nbsp;-&gt;&nbsp;<strong>C&agrave;i Đặt</strong>&nbsp;-&gt;&nbsp;<strong>ON/OFF Th&ocirc;ng b&aacute;o nổi</strong></p>\r\n'),
+(60, 'popup_noti', ''),
 (64, 'license_key', '0S5LZTGidwX799ZQ'),
 (69, 'home_page', 'home'),
 (70, 'smtp_host', ''),
@@ -999,7 +1001,7 @@ INSERT INTO `settings` (`id`, `name`, `value`) VALUES
 (72, 'smtp_port', ''),
 (73, 'smtp_email', ''),
 (74, 'smtp_password', ''),
-(76, 'default_product_image', 'assets/storage/images/default_product_image31C.png'),
+(76, 'default_product_image', 'assets/storage/images/default_product_image8IE.png'),
 (77, 'status_captcha', '0'),
 (78, 'crypto_note', '<p>1$=23000</p>\r\n'),
 (79, 'crypto_address', ''),
@@ -1010,7 +1012,7 @@ INSERT INTO `settings` (`id`, `name`, `value`) VALUES
 (84, 'crypto_rate', '23000'),
 (85, 'reCAPTCHA_site_key', ''),
 (86, 'reCAPTCHA_secret_key', ''),
-(87, 'reCAPTCHA_status', '1'),
+(87, 'reCAPTCHA_status', '0'),
 (88, 'telegram_status', '1'),
 (89, 'smtp_status', '1'),
 (93, 'affiliate_ck', '5'),
@@ -1030,7 +1032,7 @@ INSERT INTO `settings` (`id`, `name`, `value`) VALUES
 (109, 'noti_recharge', '[{time}] <b>{username}</b> vừa nạp {amount} vào {method} thực nhận {price}.'),
 (110, 'noti_action', '[{time}] \r\n- <b>Username</b>: <code>{username}</code>\r\n- <b>Action</b>:  <code>{action}</code>\r\n- <b>IP</b>: <code>{ip}</code>'),
 (111, 'theme_color', '#007ea8'),
-(112, 'hotline', '0XXXXXXXXX'),
+(112, 'hotline', '0866064053'),
 (113, 'type_notification', 'telegram'),
 (114, 'perfectmoney_status', '0'),
 (115, 'perfectmoney_account', ''),
@@ -1059,7 +1061,7 @@ INSERT INTO `settings` (`id`, `name`, `value`) VALUES
 (138, 'product_photo_display', '0'),
 (139, 'product_rating_display', '0'),
 (140, 'product_sold_display', '0'),
-(141, 'banner_singer', 'assets/storage/images/banner_singerW5H.png'),
+(141, 'banner_singer', 'assets/storage/images/banner_singerQKV.png'),
 (142, 'image_empty_state', 'assets/storage/images/image_empty_stateNPV.png'),
 (143, 'copyright_footer', 'Software By <a href=\"https://cmsnt.co\">CMSNT.CO</a>'),
 (144, 'menu_category_right', '1'),
@@ -1080,7 +1082,7 @@ INSERT INTO `settings` (`id`, `name`, `value`) VALUES
 (159, 'gtranslate_script', '<div class=\"gtranslate_wrapper\"></div>\r\n<script>window.gtranslateSettings = {\"default_language\":\"vi\",\"languages\":[\"vi\",\"fr\",\"de\",\"it\",\"es\",\"zh-CN\",\"ar\",\"tr\",\"ru\",\"uk\",\"km\",\"th\",\"en\"],\"wrapper_selector\":\".gtranslate_wrapper\"}</script>\r\n<script src=\"https://cdn.gtranslate.net/widgets/latest/dropdown.js\" defer></script>'),
 (160, 'notice_top_left', ''),
 (161, 'page_contact', ''),
-(162, 'page_policy', '<p><img alt=\"yes\" src=\"http://localhost/CMSNT.CO/SHOPCLONE7/public/ckeditor/plugins/smiley/images/thumbs_up.png\" title=\"yes\" />&nbsp;Thay đổi Nội dung trang ch&iacute;nh s&aacute;ch&nbsp;tại -&gt;&nbsp;<strong>Trang Quản Trị</strong>&nbsp;-&gt;&nbsp;<strong>C&agrave;i Đặt</strong>&nbsp;-&gt;&nbsp;Nội dung trang ch&iacute;nh s&aacute;ch</p>\r\n\r\n<p>&nbsp;</p>\r\n'),
+(162, 'page_policy', '<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n'),
 (163, 'page_faq', ''),
 (164, 'page_block_ip', NULL),
 (165, 'email_temp_content_warning_login', '<p style=\"text-align:center\">&nbsp;</p>\r\n\r\n<p style=\"text-align:center\"><img alt=\"\" src=\"https://img.upanh.tv/2024/03/29/IMG_2099.gif\" style=\"height:150px; width:150px\" /></p>\r\n\r\n<h2 style=\"text-align:center\"><span style=\"color:#000000\"><strong>TH&Ocirc;NG B&Aacute;O ĐĂNG NHẬP</strong></span></h2>\r\n\r\n<p style=\"text-align:center\"><strong><img alt=\"\" src=\"https://img.upanh.tv/2024/03/29/lien-he-chu-dau-tu.gif.pagespeed.ce.9cZa7M_Wm6.gif\" style=\"height:40px; width:50px\" /></strong></p>\r\n\r\n<p style=\"text-align:center\">&nbsp;</p>\r\n\r\n<p style=\"text-align:center\"><strong>CH&Uacute;NG T&Ocirc;I VỪA NHẬN THẤY THIẾT BỊ&nbsp;<span style=\"color:#e74c3c\">{device}</span> ĐĂNG NHẬP V&Agrave;O T&Agrave;I KHOẢN<span style=\"color:#000000\"> CỦA QU&Yacute; KH&Aacute;CH</span>&nbsp;V&Agrave;O L&Uacute;C&nbsp;<span style=\"color:#e74c3c\">{time}</span></strong></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"color:#000000\"><strong>IP THIẾT BỊ :</strong></span><span style=\"color:#e74c3c\"><strong>&nbsp;</strong></span><span style=\"color:#e74c3c\"><strong>{ip}</strong></span></p>\r\n\r\n<hr />\r\n<p style=\"text-align:center\"><span style=\"color:#e74c3c\"><strong>Lưu &yacute; :</strong></span></p>\r\n\r\n<p style=\"text-align:center\"><strong>NẾU Đ&Oacute; KH&Ocirc;NG PHẢI L&Agrave; BẠN ĐĂNG NHẬP TH&Igrave; VUI L&Ograve;NG V&Agrave;O T&Agrave;I KHOẢN ĐỂ THAY ĐỔI MẬT KHẨU V&Agrave; BẢO MẬT T&Agrave;I KHOẢN</strong></p>\r\n'),
@@ -1099,7 +1101,7 @@ INSERT INTO `settings` (`id`, `name`, `value`) VALUES
 (178, 'email_temp_subject_buy_order', 'Thông tin đơn hàng'),
 (179, 'time_cron_suppliers_shopclone7', '1734505861'),
 (180, 'time_cron_suppliers_api18', '1734505861'),
-(181, 'avatar', 'assets/storage/images/avatarWDV.png'),
+(181, 'avatar', 'assets/storage/images/avatarYAU.png'),
 (182, 'check_time_cron_momo', '1734505861'),
 (183, 'momo_number', ''),
 (184, 'momo_name', ''),
@@ -1194,7 +1196,7 @@ CREATE TABLE `suppliers` (
   `create_gettime` datetime NOT NULL,
   `update_gettime` datetime NOT NULL,
   `check_string_api` varchar(55) NOT NULL DEFAULT 'ON'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -1207,7 +1209,7 @@ CREATE TABLE `translate` (
   `lang_id` int(11) NOT NULL DEFAULT 0,
   `name` longtext DEFAULT NULL,
   `value` longtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `translate`
@@ -1770,14 +1772,14 @@ CREATE TABLE `users` (
   `status_noti_login_to_mail` int(11) NOT NULL DEFAULT 0,
   `status_view_order` int(11) NOT NULL DEFAULT 0,
   `utm_source` varchar(55) NOT NULL DEFAULT 'web'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `fullname`, `phone`, `admin`, `ctv`, `banned`, `create_date`, `update_date`, `time_session`, `time_request`, `ip`, `token`, `token_2fa`, `token_forgot_password`, `time_forgot_password`, `money`, `total_money`, `debit`, `gender`, `device`, `avatar`, `status_2fa`, `SecretKey_2fa`, `limit_2fa`, `discount`, `trial`, `ref_id`, `ref_ck`, `ref_click`, `ref_amount`, `ref_price`, `ref_total_price`, `telegram_chat_id`, `api_key`, `login_attempts`, `status_otp_mail`, `otp_mail`, `token_otp_mail`, `limit_otp_mail`, `status_noti_login_to_mail`, `status_view_order`, `utm_source`) VALUES
-(1, 'admin', '$2y$10$jArj9nh/CWClrLYlpBqeE.cXeij/bibiStstfXKmTLtgVOQUbBzEu', 'admin@admin.com', NULL, NULL, 1, 0, 0, '2025-03-22 09:41:09', '2025-03-22 09:41:09', 1742611358, 0, '', 'Gc0dRVxSKbI5foa7N9YOwXekrh1vzMujTUqgl6J8nAWp2syPCHZ3D4EBimtLQ1742611268e55010f777d74bf337f07620a54ae438', NULL, NULL, 0, 0, 0, 0, 'Male', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', NULL, 0, 'F5ZUKZFJ477NHD3H', 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, 'a76d9b043f76f638c0832468bb3fa219', 0, 0, NULL, NULL, 0, 0, 0, 'camp_abc');
+(1, 'admin', '$2y$10$jArj9nh/CWClrLYlpBqeE.cXeij/bibiStstfXKmTLtgVOQUbBzEu', 'admin@admin.com', NULL, NULL, 1, 0, 0, '2025-03-22 09:41:09', '2025-03-22 09:41:09', 1742970631, 1742659497, '::1', 'Gc0dRVxSKbI5foa7N9YOwXekrh1vzMujTUqgl6J8nAWp2syPCHZ3D4EBimtLQ1742611268e55010f777d74bf337f07620a54ae438', '', NULL, 0, 0, 0, 0, 'Male', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0', NULL, 0, 'F5ZUKZFJ477NHD3H', 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, 'a76d9b043f76f638c0832468bb3fa219', 0, 0, '', '', 0, 0, 0, 'camp_abc');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -2190,7 +2192,7 @@ ALTER TABLE `languages`
 -- AUTO_INCREMENT cho bảng `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT cho bảng `log_bank_auto`
