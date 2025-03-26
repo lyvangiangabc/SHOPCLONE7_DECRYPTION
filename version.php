@@ -1,6 +1,5 @@
 <?php
-// zalo 0347480009
-echo "<!-- Developer By CMSNT.CO | FB.COM/CMSNT.CO | ZALO.ME/0947838128 | MMO Solution -->\n";
+
 define("IN_SITE", true);
 require_once __DIR__ . "/libs/db.php";
 require_once __DIR__ . "/config.php";
